@@ -51,8 +51,30 @@ MDK-ARM/Boot/*.out
 MDK-ARM/Boot/*vguix.*
 
 # CMake
-build/*
+build/
 Appli/build/
 Boot/build/
-.metadata/
+cmake-build-*/
+.cmake/
+compile_commands.json
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# VS Code
+.vscode/.intellisense-cache/
+.vscode/ipch/
+*.code-workspace
+
+# Build artifacts
+*.elf
+*.bin
+*.hex
+*.map
+*.o
+*.d
+*.su
+*.lst
+
+# IDE metadata
 .metadata/

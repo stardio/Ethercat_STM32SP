@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "name": "STM32H7S78-DK",
+      "includePath": [
+        "${workspaceFolder}/Appli/Core/Inc",
+        "${workspaceFolder}/Boot/Core/Inc",
+        "${workspaceFolder}/Drivers/STM32H7RSxx_HAL_Driver/Inc",
+        "${workspaceFolder}/Drivers/STM32H7RSxx_HAL_Driver/Inc/Legacy",
+        "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32H7RSxx/Include",
+        "${workspaceFolder}/Drivers/CMSIS/Include",
+        "${workspaceFolder}/Drivers/BSP/Components",
+        "${workspaceFolder}/Middlewares/**"
+      ],
+      "defines": [
+        "USE_HAL_DRIVER",
+        "STM32H7S7xx",
+        "STM32H7RSxx",
+        "ARM_MATH_CM7",
+        "USE_BPP=24",
+        "EC_VER4",
+        "SOEM_ENABLED"
+      ],
+      "compilerPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/12.2 mpacbti-rel1/bin/arm-none-eabi-gcc.exe",
+      "cStandard": "c11",
+      "cppStandard": "c++14",
+      "intelliSenseMode": "gcc-arm",
+      "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+      "configurationProvider": "ms-vscode.cmake-tools"
+    }
+  ],
+  "version": 4
+}

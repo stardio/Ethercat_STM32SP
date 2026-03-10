@@ -18,7 +18,8 @@
 static void soem_log(const char *msg);
 
 ecx_contextt soem_context;
-/* Keep IOmap in MPU non-cacheable RAM_CMD region for DMA coherency. */
+/* Keep IOmap in AXI SRAM non-cacheable region (RAM_CMD) for ETH DMA coherency.
+ * ETH DMA uses AXI bus — cannot access SRAMAHB (AHB-only). */
 static uint8 soem_iomap[4096] __attribute__((section(".eth_dma"), aligned(32)));
 static uint8 soem_group = 0;
 static uint8 soem_initialized = 0;

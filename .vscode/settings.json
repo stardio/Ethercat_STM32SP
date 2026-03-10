@@ -1,0 +1,93 @@
+{
+  // 파일 감시 제외 - VS Code 성능 개선
+  "files.watcherExclude": {
+    "**/build/**": true,
+    "**/Appli/TouchGFX/build/**": true,
+    "**/Boot/TouchGFX/build/**": true,
+    "**/Appli/TouchGFX/generated/**": true,
+    "**/Appli/TouchGFX/simulator/**": true,
+    "**/Appli/Middlewares/ST/touchgfx/**": true,
+    "**/Appli/Middlewares/ST/touchgfx_components/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/*.elf": true,
+    "**/*.o": true,
+    "**/*.d": true,
+    "**/*.su": true,
+    "**/*.map": true,
+    "**/EWARM/**/Exe/**": true,
+    "**/EWARM/**/Obj/**": true,
+    "**/EWARM/**/List/**": true,
+    "**/MDK-ARM/**/Objects/**": true,
+    "**/STM32CubeIDE/**/Debug/**": true,
+    "**/STM32CubeIDE/**/Release/**": true
+  },
+
+  // 검색 제외 - 검색 속도 개선
+  "search.exclude": {
+    "**/build/**": true,
+    "**/Appli/TouchGFX/build/**": true,
+    "**/Boot/TouchGFX/build/**": true,
+    "**/Appli/TouchGFX/generated/**": true,
+    "**/Appli/TouchGFX/simulator/**": true,
+    "**/Appli/Middlewares/ST/touchgfx/**": true,
+    "**/Appli/Middlewares/ST/touchgfx_components/**": true,
+    "**/*.elf": true,
+    "**/*.o": true,
+    "**/*.d": true,
+    "**/*.map": true,
+    "**/EWARM/settings/**": true,
+    "**/EWARM/**/Exe/**": true,
+    "**/EWARM/**/Obj/**": true,
+    "**/MDK-ARM/DebugConfig/**": true,
+    "**/STM32CubeIDE/.settings/**": true,
+    "**/STM32CubeIDE/**/Debug/**": true
+  },
+
+  // C/C++ IntelliSense 제외 - 인덱싱 속도 개선
+  "C_Cpp.files.exclude": {
+    "**/build/**": true,
+    "**/Appli/TouchGFX/build/**": true,
+    "**/Boot/TouchGFX/build/**": true,
+    "**/Appli/TouchGFX/generated/**": true,
+    "**/Appli/TouchGFX/simulator/**": true,
+    "**/*.o": true,
+    "**/*.d": true,
+    "**/*.elf": true,
+    "**/*.map": true
+  },
+
+  // C/C++ 설정
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+  "C_Cpp.errorSquiggles": "enabled",
+  "C_Cpp.intelliSenseEngine": "default",
+  "C_Cpp.intelliSenseCachePath": "${workspaceFolder}/.vscode/.intellisense-cache",
+  "C_Cpp.default.cStandard": "c11",
+  "C_Cpp.default.cppStandard": "c++14",
+
+  // CMake 설정
+  "cmake.buildDirectory": "${workspaceFolder}/build",
+  "cmake.configureOnOpen": false,
+  "cmake.sourceDirectory": "${workspaceFolder}",
+
+  // 파일 연결
+  "files.associations": {
+    "*.h": "c",
+    "*.c": "c",
+    "*.cpp": "cpp",
+    "*.ld": "ld",
+    "*.ioc": "xml"
+  },
+
+  // 자동 저장
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  // Git 설정
+  "git.ignoreLimitWarning": true,
+
+  // 기타 성능 개선
+  "extensions.autoUpdate": false,
+  "telemetry.telemetryLevel": "off"
+}

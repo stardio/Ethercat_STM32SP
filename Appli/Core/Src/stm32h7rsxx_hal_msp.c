@@ -140,7 +140,7 @@ void HAL_DMA2D_MspInit(DMA2D_HandleTypeDef* hdma2d)
     /* Peripheral clock enable */
     __HAL_RCC_DMA2D_CLK_ENABLE();
     /* DMA2D interrupt Init */
-    HAL_NVIC_SetPriority(DMA2D_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(DMA2D_IRQn, 6, 0);
     /* USER CODE BEGIN DMA2D_MspInit 1 */
 
     /* USER CODE END DMA2D_MspInit 1 */
@@ -235,9 +235,9 @@ void HAL_GPU2D_MspInit(GPU2D_HandleTypeDef* hgpu2d)
     /* Peripheral clock enable */
     __HAL_RCC_GPU2D_CLK_ENABLE();
     /* GPU2D interrupt Init */
-    HAL_NVIC_SetPriority(GPU2D_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(GPU2D_IRQn, 6, 0);
     HAL_NVIC_EnableIRQ(GPU2D_IRQn);
-    HAL_NVIC_SetPriority(GPU2D_ER_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(GPU2D_ER_IRQn, 6, 0);
     HAL_NVIC_EnableIRQ(GPU2D_ER_IRQn);
     /* USER CODE BEGIN GPU2D_MspInit 1 */
 
@@ -431,7 +431,7 @@ void HAL_JPEG_MspInit(JPEG_HandleTypeDef* hjpeg)
     }
 
     /* JPEG interrupt Init */
-    HAL_NVIC_SetPriority(JPEG_IRQn, 8, 0);
+    HAL_NVIC_SetPriority(JPEG_IRQn, 9, 0);
     HAL_NVIC_EnableIRQ(JPEG_IRQn);
     /* USER CODE BEGIN JPEG_MspInit 1 */
 
@@ -607,7 +607,7 @@ void HAL_LTDC_MspInit(LTDC_HandleTypeDef* hltdc)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* LTDC interrupt Init */
-    HAL_NVIC_SetPriority(LTDC_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(LTDC_IRQn, 6, 0);
     /* USER CODE BEGIN LTDC_MspInit 1 */
 
     /* USER CODE END LTDC_MspInit 1 */
@@ -718,7 +718,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
     HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
     /* Enable UART4 interrupt for non-blocking TX */
-    HAL_NVIC_SetPriority(UART4_IRQn, 6, 0);
+    HAL_NVIC_SetPriority(UART4_IRQn, 7, 0);
     HAL_NVIC_EnableIRQ(UART4_IRQn);
   }
 }
@@ -811,7 +811,8 @@ void HAL_ETH_MspInit(ETH_HandleTypeDef* heth)
     GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-    /* ETH interrupt Init */
+    /* ETH interrupt Init — must be >= configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY (5)
+     * for FreeRTOS API safety. Highest allowed priority for FreeRTOS-aware ISR. */
     HAL_NVIC_SetPriority(ETH_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(ETH_IRQn);
   }

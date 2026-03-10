@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "options": {
+    "env": {
+      "PATH": "C:\\Program Files (x86)\\Arm GNU Toolchain arm-none-eabi\\12.2 mpacbti-rel1\\bin;${env:PATH}",
+      "STM32_PROGRAMMER": "C:\\Program Files\\STMicroelectronics\\STM32Cube\\STM32CubeProgrammer\\bin\\STM32_Programmer_CLI.exe",
+      "EXT_LOADER": "${workspaceFolder}\\gcc\\MX66UW1G45G_STM32H7S78-DK.stldr"
+    }
+  },
+  "tasks": [
+    {
+      "label": "CMake Configure",
+      "type": "shell",
+      "command": "cmake --preset Debug",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Build All",
+      "type": "shell",
+      "command": "cmake --build --preset Debug",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$gcc",
+      "dependsOn": "CMake Configure"
+    },
+    {
+      "label": "Flash Boot",
+      "type": "shell",
+      "command": "& \"${STM32_PROGRAMMER}\" -c port=SWD -d \"${workspaceFolder}\\build\\Debug\\Boot\\LCD_Test_Boot.bin\" 0x08000000 -v",
+      "problemMatcher": [],
+      "dependsOn": "Build All"
+    },
+    {
+      "label": "Flash Appli",
+      "type": "shell",
+      "command": "& \"${STM32_PROGRAMMER}\" -c port=SWD -d \"${workspaceFolder}\\build\\Debug\\Appli\\LCD_Test_Appli.bin\" 0x70000000 -el \"${EXT_LOADER}\" -hardRst",
+      "problemMatcher": [],
+      "dependsOn": "Flash Boot"
+    },
+    {
+      "label": "Build & Flash All",
+      "dependsOn": "Flash Appli",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Flash Boot Only",
+      "type": "shell",
+      "command": "& \"${STM32_PROGRAMMER}\" -c port=SWD -d \"${workspaceFolder}\\build\\Debug\\Boot\\LCD_Test_Boot.bin\" 0x08000000 -v -hardRst",
+      "problemMatcher": []
+    },
+    {
+      "label": "Flash Appli Only",
+      "type": "shell",
+      "command": "& \"${STM32_PROGRAMMER}\" -c port=SWD -d \"${workspaceFolder}\\build\\Debug\\Appli\\LCD_Test_Appli.bin\" 0x70000000 -el \"${EXT_LOADER}\" -hardRst",
+      "problemMatcher": []
+    }
+  ]
+}

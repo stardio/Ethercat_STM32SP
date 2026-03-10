@@ -77,7 +77,8 @@ LTDC_HandleTypeDef hltdc;
 UART_HandleTypeDef huart4;
 
 ETH_HandleTypeDef heth;
-/* DMA descriptors in RAM_CMD (0x2406C000), MPU non-cacheable region */
+/* DMA descriptors in RAM_CMD (0x2406C000), MPU non-cacheable region.
+ * ETH DMA uses AXI bus — cannot access SRAMAHB (AHB-only). Must stay in AXI SRAM. */
 __ALIGN_BEGIN ETH_DMADescTypeDef DMARxDscrTab[ETH_RX_DESC_CNT] __ALIGN_END __attribute__((section(".eth_dma"), aligned(32)));
 __ALIGN_BEGIN ETH_DMADescTypeDef DMATxDscrTab[ETH_TX_DESC_CNT] __ALIGN_END __attribute__((section(".eth_dma"), aligned(32)));
 
@@ -562,9 +563,9 @@ static void MX_HPDMA1_Init(void)
   __HAL_RCC_HPDMA1_CLK_ENABLE();
 
   /* HPDMA1 interrupt Init */
-    HAL_NVIC_SetPriority(HPDMA1_Channel0_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(HPDMA1_Channel0_IRQn, 6, 0);
     HAL_NVIC_EnableIRQ(HPDMA1_Channel0_IRQn);
-    HAL_NVIC_SetPriority(HPDMA1_Channel1_IRQn, 5, 0);
+    HAL_NVIC_SetPriority(HPDMA1_Channel1_IRQn, 6, 0);
     HAL_NVIC_EnableIRQ(HPDMA1_Channel1_IRQn);
 
   /* USER CODE BEGIN HPDMA1_Init 1 */
@@ -768,11 +769,11 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOF, FRAME_RATE_Pin|RENDER_TIME_Pin|MCU_ACTIVE_Pin|VSYNC_FREQ_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LCD_EN_GPIO_Port, LCD_EN_Pin, GPIO_PIN_SET);
+  /*Configure GPIO pin Output Level - LCD DISABLED */
+  HAL_GPIO_WritePin(LCD_EN_GPIO_Port, LCD_EN_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LCD_BL_CTRL_GPIO_Port, LCD_BL_CTRL_Pin, GPIO_PIN_SET);
+  /*Configure GPIO pin Output Level - LCD Backlight DISABLED */
+  HAL_GPIO_WritePin(LCD_BL_CTRL_GPIO_Port, LCD_BL_CTRL_Pin, GPIO_PIN_RESET);
   
   /*Configure GPIO pin Output Level - User LEDs OFF */
   HAL_GPIO_WritePin(GPIOO, GPIO_PIN_1 | GPIO_PIN_5, GPIO_PIN_RESET);
@@ -819,7 +820,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(LCD_BL_CTRL_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(TP_IRQ_EXTI_IRQn, 5, 0);
+  HAL_NVIC_SetPriority(TP_IRQ_EXTI_IRQn, 7, 0);
   HAL_NVIC_EnableIRQ(TP_IRQ_EXTI_IRQn);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
