@@ -39,8 +39,8 @@ ENTRY(Reset_Handler)
 /* Memories definition */
 MEMORY
 {
-  RAM       (rw)  : ORIGIN = 0x24000000, LENGTH = 0x0006c000
-  RAM_CMD   (rw)  : ORIGIN = 0x2406c000, LENGTH = 0x00006000
+  RAM       (rw)  : ORIGIN = 0x24000000, LENGTH = 0x00068000
+  RAM_CMD   (rw)  : ORIGIN = 0x24068000, LENGTH = 0x0000A000
 
   ITCM      (rw)  : ORIGIN = 0x00000000, LENGTH = 0x00010000
   DTCM      (rw)  : ORIGIN = 0x20000000, LENGTH = 0x00003000

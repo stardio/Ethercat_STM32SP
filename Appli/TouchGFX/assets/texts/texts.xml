@@ -6,29 +6,44 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_OND7" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt; %</Translation>
+      <Text Id="__SingleUse_HFU1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">JOG peed</Translation>
       </Text>
-      <Text Id="__SingleUse_SVEC" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt; %</Translation>
+      <Text Id="__SingleUse_3L1T" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">JOG</Translation>
       </Text>
-      <Text Id="__SingleUse_6OU0" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt; %</Translation>
+      <Text Id="__SingleUse_I5SG" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">RUN</Translation>
       </Text>
-      <Text Id="__SingleUse_G2CU" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt; %</Translation>
+      <Text Id="__SingleUse_8LEK" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt; </Translation>
       </Text>
-      <Text Id="__SingleUse_GTWZ" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">ETH</Translation>
+      <Text Id="__SingleUse_MTUB" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt; </Translation>
       </Text>
-      <Text Id="__SingleUse_P2KV" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Error Code</Translation>
+      <Text Id="__SingleUse_2NI1" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt; </Translation>
       </Text>
-      <Text Id="__SingleUse_IPVU" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">SOEM</Translation>
+      <Text Id="__SingleUse_9FLE" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Torque</Translation>
       </Text>
-      <Text Id="__SingleUse_3Q34" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Heartbeat</Translation>
+      <Text Id="__SingleUse_MMAA" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_CI6S" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Position</Translation>
+      </Text>
+      <Text Id="__SingleUse_FRNC" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Parameter</Translation>
+      </Text>
+      <Text Id="__SingleUse_7USM" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Home Mode</Translation>
+      </Text>
+      <Text Id="__SingleUse_SY5A" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Manual OP</Translation>
+      </Text>
+      <Text Id="__SingleUse_39QC" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Prog Mode</Translation>
       </Text>
     </TextGroup>
   </Texts>

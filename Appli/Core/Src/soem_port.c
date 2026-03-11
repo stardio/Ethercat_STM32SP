@@ -48,6 +48,14 @@ static uint16 soem_last_controlword = 0xFFFFU;
 static int32 soem_target_position = 0;
 static uint8 soem_last_state = 0xFFU;
 
+/* Volatile shadow copies for safe UI access (TouchGFX) */
+static volatile int32_t  soem_shadow_position = 0;
+static volatile int32_t  soem_shadow_velocity = 0;
+static volatile int16_t  soem_shadow_torque   = 0;
+static volatile uint16_t soem_shadow_statusword = 0;
+static volatile uint8_t  soem_shadow_pdo_ready  = 0;
+static volatile uint8_t  soem_shadow_run_enable = 0;
+
 /* SOEM_PortPoll is called every ~100 ms in main task. */
 #define SOEM_CIA402_HOLD_CYCLES 5U      /* ~500 ms */
 #define SOEM_CIA402_TIMEOUT_CYCLES 50U  /* ~5 s */
@@ -309,6 +317,30 @@ static void soem_cia402_step(uint16 statusword)
     }
     /* Keep sending controlword=0 (no action) while waiting. */
     soem_rxpdo->controlword = 0U;
+    soem_rxpdo->target_position = soem_target_position;
+    return;
+  }
+
+  /* RUN/STOP direct gate:
+   * RUN=0 -> hold at Shutdown command (0x0006), never auto-progress to Enable Op.
+   * RUN=1 -> allow full CiA402 sequence to Operation Enabled.
+   */
+  if (soem_shadow_run_enable == 0U)
+  {
+    controlword = 0x0006U;
+    soem_cia402_stage = SOEM_CIA402_STAGE_WAIT_READY;
+    soem_cia402_hold_counter = 0U;
+    soem_cia402_timeout_counter = SOEM_CIA402_TIMEOUT_CYCLES;
+
+    if (controlword != soem_last_controlword)
+    {
+      char line[64];
+      soem_last_controlword = controlword;
+      (void)snprintf(line, sizeof(line), "CIA402: CW=0x%04X", controlword);
+      soem_log(line);
+    }
+
+    soem_rxpdo->controlword = controlword;
     soem_rxpdo->target_position = soem_target_position;
     return;
   }
@@ -734,6 +766,13 @@ void SOEM_PortPoll(void)
   {
     static uint32 pdo_debug_counter = 0;
     uint16 statusword = soem_txpdo->statusword;
+
+    /* Update shadow copies for UI access */
+    soem_shadow_position   = soem_txpdo->position_actual;
+    soem_shadow_velocity   = soem_txpdo->velocity_actual;
+    soem_shadow_torque     = soem_txpdo->torque_actual;
+    soem_shadow_statusword = statusword;
+    soem_shadow_pdo_ready  = 1U;
     if (statusword != soem_last_statusword)
     {
       char line[64];
@@ -773,6 +812,35 @@ void SOEM_PortPoll(void)
 
     soem_cia402_step(statusword);
   }
+}
+
+/* ─── UI accessors (callable from TouchGFX task) ─────────────────────────── */
+
+int32_t SOEM_GetPositionActual(void)  { return (int32_t)soem_shadow_position; }
+int32_t SOEM_GetVelocityActual(void)  { return (int32_t)soem_shadow_velocity; }
+int16_t SOEM_GetTorqueActual(void)    { return (int16_t)soem_shadow_torque;   }
+uint16_t SOEM_GetStatusword(void)     { return (uint16_t)soem_shadow_statusword; }
+uint8_t  SOEM_GetPdoReady(void)       { return (uint8_t)soem_shadow_pdo_ready; }
+uint8_t  SOEM_GetRunEnable(void)      { return (uint8_t)soem_shadow_run_enable; }
+
+void SOEM_SetRunEnable(uint8_t enable)
+{
+  uint8_t requested = (enable != 0U) ? 1U : 0U;
+  if (soem_shadow_run_enable != requested)
+  {
+    soem_shadow_run_enable = requested;
+    soem_log((requested != 0U) ? "CIA402: RUN request ON" : "CIA402: RUN request OFF");
+  }
+}
+
+void SOEM_SetTargetPositionDelta(int32_t delta)
+{
+  soem_target_position += delta;
+}
+
+void SOEM_SetTargetPositionAbs(int32_t pos)
+{
+  soem_target_position = pos;
 }
 
 #endif

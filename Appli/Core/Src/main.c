@@ -77,7 +77,7 @@ LTDC_HandleTypeDef hltdc;
 UART_HandleTypeDef huart4;
 
 ETH_HandleTypeDef heth;
-/* DMA descriptors in RAM_CMD (0x2406C000), MPU non-cacheable region.
+/* DMA descriptors in RAM_CMD (0x24068000), MPU non-cacheable region.
  * ETH DMA uses AXI bus — cannot access SRAMAHB (AHB-only). Must stay in AXI SRAM. */
 __ALIGN_BEGIN ETH_DMADescTypeDef DMARxDscrTab[ETH_RX_DESC_CNT] __ALIGN_END __attribute__((section(".eth_dma"), aligned(32)));
 __ALIGN_BEGIN ETH_DMADescTypeDef DMATxDscrTab[ETH_TX_DESC_CNT] __ALIGN_END __attribute__((section(".eth_dma"), aligned(32)));
@@ -247,19 +247,23 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_HPDMA1_Init();
-  // MX_LTDC_Init();     /* DISABLED - LCD/ETH conflict test */
+  MX_LTDC_Init();
   MX_CRC_Init();
-  // MX_DMA2D_Init();    /* DISABLED - LCD/ETH conflict test */
-  // MX_JPEG_Init();     /* DISABLED - LCD/ETH conflict test */
+  MX_DMA2D_Init();
+  MX_JPEG_Init();
   MX_FLASH_Init();
   MX_I2C1_Init();
   MX_UART4_Init();
-  // MX_GPU2D_Init();    /* DISABLED - LCD/ETH conflict test */
-  // MX_ICACHE_GPU2D_Init(); /* DISABLED - LCD/ETH conflict test */
-  // MX_GFXMMU_Init();   /* DISABLED - LCD/ETH conflict test */
-  // MX_TouchGFX_Init(); /* DISABLED - LCD/ETH conflict test */
+  MX_GPU2D_Init();
+  MX_ICACHE_GPU2D_Init();
+  MX_GFXMMU_Init();
+  MX_TouchGFX_Init();
   /* Call PreOsInit function */
-  // MX_TouchGFX_PreOSInit(); /* DISABLED - LCD/ETH conflict test */
+  MX_TouchGFX_PreOSInit();
+
+  /* Enable LCD panel power and backlight (both were left disabled for ETH-only tests). */
+  HAL_GPIO_WritePin(LCD_EN_GPIO_Port, LCD_EN_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(LCD_BL_CTRL_GPIO_Port, LCD_BL_CTRL_Pin, GPIO_PIN_SET);
   /* USER CODE BEGIN 2 */
   // ETH init moved to EtherCAT_Task to avoid blocking
   /* USER CODE END 2 */
@@ -288,7 +292,7 @@ int main(void)
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* creation of TouchGFXTask */
-  // TouchGFXTaskHandle = osThreadNew(TouchGFX_Task, NULL, &TouchGFXTask_attributes); /* DISABLED - LCD/ETH conflict test */
+  TouchGFXTaskHandle = osThreadNew(TouchGFX_Task, NULL, &TouchGFXTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -1040,7 +1044,7 @@ void EtherCAT_Task(void *argument)
 #ifndef SOEM_ENABLED
   /* === ETH-ONLY CONTINUOUS TX TEST === */
   {
-    /* Simple test packet in RAM_CMD non-cacheable memory for DMA */
+    /* Simple test packet in RAM_CMD (MPU non-cacheable) for DMA */
     static uint8_t testPkt[64] __attribute__((section(".eth_dma"), aligned(32)));
     memset(testPkt, 0xAA, 64);
     /* Broadcast destination MAC */
@@ -1618,8 +1622,8 @@ static void MPU_Config(void)
   /** Initializes and configures the Region and the memory to be protected
   */
   MPU_InitStruct.Number = MPU_REGION_NUMBER6;
-  MPU_InitStruct.BaseAddress = 0x2406c000;
-  MPU_InitStruct.Size = MPU_REGION_SIZE_16KB;
+  MPU_InitStruct.BaseAddress = 0x24068000;
+  MPU_InitStruct.Size = MPU_REGION_SIZE_32KB;
   MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL1;  /* TEX=1: Normal memory */
   MPU_InitStruct.IsShareable = MPU_ACCESS_NOT_SHAREABLE;
   MPU_InitStruct.IsCacheable = MPU_ACCESS_NOT_CACHEABLE;   /* C=0 */
