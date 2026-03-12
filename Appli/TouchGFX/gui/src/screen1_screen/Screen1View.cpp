@@ -11,7 +11,6 @@ Screen1View::Screen1View() :
     cbBtnHomeMode(this,  &Screen1View::onBtnHomeModeClicked),
     cbBtnManualOP(this,  &Screen1View::onBtnManualOPClicked),
     cbBtnParameter(this, &Screen1View::onBtnParameterClicked),
-    cbBtnProgMode(this,  &Screen1View::onBtnProgModeClicked),
     cbToggleRun(this,    &Screen1View::onToggleRunClicked),
     cbBtnJogNeg(this,    &Screen1View::onBtnJogNegClicked),
     cbBtnJogPos(this,    &Screen1View::onBtnJogPosClicked),
@@ -28,11 +27,16 @@ void Screen1View::setupScreen()
 {
     Screen1ViewBase::setupScreen();
 
-    /* Hook button callbacks */
-    buttonWithLabel1.setAction(cbBtnHomeMode);
+    /* Hook button callbacks.
+     * New Screen1ViewBase layout:
+     *   Prog_mode        = "Prog Mode"  -> handled by base (gotoScreen2)
+     *   buttonWithLabel1_1 = "Manual OP"
+     *   buttonWithLabel1_2 = "Home Mode"
+    *   buttonWithLabel1_3 = "Origin Reset"
+     */
     buttonWithLabel1_1.setAction(cbBtnManualOP);
-    buttonWithLabel1_2.setAction(cbBtnParameter);
-    buttonWithLabel1_3.setAction(cbBtnProgMode);
+    buttonWithLabel1_2.setAction(cbBtnHomeMode);
+    buttonWithLabel1_3.setAction(cbBtnParameter);
     /* RUN is handled with debounced polling in handleTickEvent(). */
     buttonWithIcon1.setAction(cbBtnJogNeg);
     buttonWithIcon1_1.setAction(cbBtnJogPos);
@@ -87,16 +91,26 @@ void Screen1View::setupScreen()
     slider1.setValue(0);
     jogDeltaPerTick = 0;
 
-    /* Safety default: after reset, stay STOP until user turns RUN ON. */
-    toggleButton1.forceState(false);
-    SOEM_SetRunEnable(0U);
-    runUiState = 0U;
-    runAppliedState = 0U;
-    runDebounceCount = 0U;
+    /* Restore RUN state from hardware instead of forcing OFF.
+     * This preserves RUN state when returning from other screens. */
+    uint16_t statusword = SOEM_GetStatusword();
+    bool isRunning = (statusword & 0x01) != 0;  /* Bit 0: Run Enable status */
+    toggleButton1.forceState(isRunning);
+    
+    /* Initialize debounce state to match current hardware state */
+    runUiState = isRunning ? 1U : 0U;
+    runAppliedState = isRunning ? 1U : 0U;
+    runDebounceCount = 0U;  /* Reset debounce counter for stabilization */
 }
 
 void Screen1View::tearDownScreen()
 {
+    remove(positionValueText);
+    remove(positionMinusSign);
+    remove(speedValueText);
+    remove(speedMinusSign);
+    remove(torqueValueText);
+    remove(torqueMinusSign);
     Screen1ViewBase::tearDownScreen();
 }
 
@@ -212,10 +226,8 @@ void Screen1View::handleTickEvent()
 
 void Screen1View::onBtnHomeModeClicked(const touchgfx::AbstractButton& /*btn*/)
 {
-    /* Home Mode: move to absolute position 0 */
-    SOEM_SetTargetPositionAbs(0);
-    slider1.setValue(0);
-    slider1.invalidate();
+    /* Home Mode: navigate to Screen3 (Origin Reset mode) */
+    application().gotoScreen3ScreenNoTransition();
 }
 
 void Screen1View::onBtnManualOPClicked(const touchgfx::AbstractButton& /*btn*/)
@@ -227,12 +239,7 @@ void Screen1View::onBtnManualOPClicked(const touchgfx::AbstractButton& /*btn*/)
 
 void Screen1View::onBtnParameterClicked(const touchgfx::AbstractButton& /*btn*/)
 {
-    /* Parameter: placeholder — no action in this version */
-}
-
-void Screen1View::onBtnProgModeClicked(const touchgfx::AbstractButton& /*btn*/)
-{
-    /* Prog Mode: placeholder — no action in this version */
+    /* Parameter: placeholder -- no action in this version */
 }
 
 void Screen1View::onToggleRunClicked(const touchgfx::AbstractButton& /*btn*/)

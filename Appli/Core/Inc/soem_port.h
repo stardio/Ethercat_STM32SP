@@ -30,6 +30,7 @@ uint8_t  SOEM_GetRunEnable(void);
 void     SOEM_SetRunEnable(uint8_t enable);
 void     SOEM_SetTargetPositionDelta(int32_t delta);
 void     SOEM_SetTargetPositionAbs(int32_t pos);
+void     SOEM_SetHomePosition(void);
 
 #else
 static inline void SOEM_PortInit(void) {}
@@ -47,6 +48,7 @@ static inline uint8_t  SOEM_GetRunEnable(void)      { return 0; }
 static inline void     SOEM_SetRunEnable(uint8_t enable) { (void)enable; }
 static inline void     SOEM_SetTargetPositionDelta(int32_t delta) { (void)delta; }
 static inline void     SOEM_SetTargetPositionAbs(int32_t pos)     { (void)pos; }
+static inline void     SOEM_SetHomePosition(void)                  {}
 #endif
 
 #ifdef __cplusplus

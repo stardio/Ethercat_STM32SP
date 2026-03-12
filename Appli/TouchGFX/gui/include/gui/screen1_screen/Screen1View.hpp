@@ -24,7 +24,6 @@ private:
     void onBtnHomeModeClicked(const touchgfx::AbstractButton& btn);
     void onBtnManualOPClicked(const touchgfx::AbstractButton& btn);
     void onBtnParameterClicked(const touchgfx::AbstractButton& btn);
-    void onBtnProgModeClicked(const touchgfx::AbstractButton& btn);
     void onToggleRunClicked(const touchgfx::AbstractButton& btn);
     void onBtnJogNegClicked(const touchgfx::AbstractButton& btn);
     void onBtnJogPosClicked(const touchgfx::AbstractButton& btn);
@@ -34,7 +33,6 @@ private:
     touchgfx::Callback<Screen1View, const touchgfx::AbstractButton&> cbBtnHomeMode;
     touchgfx::Callback<Screen1View, const touchgfx::AbstractButton&> cbBtnManualOP;
     touchgfx::Callback<Screen1View, const touchgfx::AbstractButton&> cbBtnParameter;
-    touchgfx::Callback<Screen1View, const touchgfx::AbstractButton&> cbBtnProgMode;
     touchgfx::Callback<Screen1View, const touchgfx::AbstractButton&> cbToggleRun;
     touchgfx::Callback<Screen1View, const touchgfx::AbstractButton&> cbBtnJogNeg;
     touchgfx::Callback<Screen1View, const touchgfx::AbstractButton&> cbBtnJogPos;

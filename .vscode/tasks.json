@@ -9,6 +9,53 @@
   },
   "tasks": [
     {
+      "label": "Quick Build Appli",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\tools\\build.ps1"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "Quick Flash Appli",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\tools\\flash.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Quick Build & Flash Appli",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\tools\\build_and_flash.ps1"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "CMake Configure",
       "type": "shell",
       "command": "cmake --preset Debug",
@@ -21,7 +68,7 @@
       "command": "cmake --build --preset Debug",
       "group": {
         "kind": "build",
-        "isDefault": true
+        "isDefault": false
       },
       "problemMatcher": "$gcc",
       "dependsOn": "CMake Configure"

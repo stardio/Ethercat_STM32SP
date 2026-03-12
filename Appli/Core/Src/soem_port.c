@@ -56,6 +56,11 @@ static volatile uint16_t soem_shadow_statusword = 0;
 static volatile uint8_t  soem_shadow_pdo_ready  = 0;
 static volatile uint8_t  soem_shadow_run_enable = 0;
 
+/* Home offset: set by SOEM_SetHomePosition().
+ * All position reads are relative to this origin.
+ * All target writes are translated back to absolute hardware counts. */
+static volatile int32_t  soem_home_offset = 0;
+
 /* SOEM_PortPoll is called every ~100 ms in main task. */
 #define SOEM_CIA402_HOLD_CYCLES 5U      /* ~500 ms */
 #define SOEM_CIA402_TIMEOUT_CYCLES 50U  /* ~5 s */
@@ -816,7 +821,7 @@ void SOEM_PortPoll(void)
 
 /* ─── UI accessors (callable from TouchGFX task) ─────────────────────────── */
 
-int32_t SOEM_GetPositionActual(void)  { return (int32_t)soem_shadow_position; }
+int32_t SOEM_GetPositionActual(void)  { return (int32_t)soem_shadow_position - (int32_t)soem_home_offset; }
 int32_t SOEM_GetVelocityActual(void)  { return (int32_t)soem_shadow_velocity; }
 int16_t SOEM_GetTorqueActual(void)    { return (int16_t)soem_shadow_torque;   }
 uint16_t SOEM_GetStatusword(void)     { return (uint16_t)soem_shadow_statusword; }
@@ -840,7 +845,19 @@ void SOEM_SetTargetPositionDelta(int32_t delta)
 
 void SOEM_SetTargetPositionAbs(int32_t pos)
 {
-  soem_target_position = pos;
+  /* Translate from user-space (offset-relative) to hardware absolute. */
+  soem_target_position = pos + (int32_t)soem_home_offset;
+}
+
+void SOEM_SetHomePosition(void)
+{
+  /* Define the current hardware position as the new origin (0).
+   * After this call, GetPositionActual() returns 0 and all subsequent
+   * SetTargetPositionAbs() calls are relative to this new origin. */
+  soem_home_offset = soem_shadow_position;
+  /* Also reset the motion target to 0 in hardware space = stay put. */
+  soem_target_position = (int32_t)soem_shadow_position;
+  soem_log("HOME: origin set to current position");
 }
 
 #endif
