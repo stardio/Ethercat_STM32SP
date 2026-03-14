@@ -51,8 +51,51 @@
       ],
       "group": {
         "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "One-Click Sync Designer UI + Full Flash",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\tools\\sync_ui_and_build_flash.ps1"
+      ],
+      "group": {
+        "kind": "build",
         "isDefault": true
       },
+      "problemMatcher": []
+    },
+    {
+      "label": "Quick Flash UI Only (Assets Only)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\tools\\flash_ui_only.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Quick Build & Flash UI Only (Assets Only)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "& \"${workspaceFolder}\\tools\\build.ps1\"; if ($LASTEXITCODE -eq 0) { & \"${workspaceFolder}\\tools\\flash_ui_only.ps1\" }"
+      ],
       "problemMatcher": []
     },
     {

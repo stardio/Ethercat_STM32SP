@@ -326,19 +326,64 @@
 			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/KeyBoard.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/containers/KeyBoard.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/HomePagePresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/homepage_screen/HomePagePresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/HomePageView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/homepage_screen/HomePageView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/MainPagePresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/mainpage_screen/MainPagePresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/MainPageView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/mainpage_screen/MainPageView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ManualPagePresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/manualpage_screen/ManualPagePresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ManualPageView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/manualpage_screen/ManualPageView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/Model.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/model/Model.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Screen1Presenter.cpp</name>
+			<name>Application/User/gui/ParameterPagePresenter.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/screen1_screen/Screen1Presenter.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/parameterpage_screen/ParameterPagePresenter.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/Screen1View.cpp</name>
+			<name>Application/User/gui/ParameterPageView.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/screen1_screen/Screen1View.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/parameterpage_screen/ParameterPageView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ProgramPagePresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/programpage_screen/ProgramPagePresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ProgramPageView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/gui/src/programpage_screen/ProgramPageView.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/ApplicationFontProvider.cpp</name>
@@ -431,9 +476,34 @@
 			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Screen1ViewBase.cpp</name>
+			<name>Application/User/generated/KeyBoardBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/gui_generated/src/screen1_screen/Screen1ViewBase.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/gui_generated/src/containers/KeyBoardBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/HomePageViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/gui_generated/src/homepage_screen/HomePageViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/MainPageViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/gui_generated/src/mainpage_screen/MainPageViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/ManualPageViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/gui_generated/src/manualpage_screen/ManualPageViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/ParameterPageViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/gui_generated/src/parameterpage_screen/ParameterPageViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/ProgramPageViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/gui_generated/src/programpage_screen/ProgramPageViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/BitmapDatabase.cpp</name>
@@ -446,29 +516,74 @@
 			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_M800.cpp</name>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/image_M800.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_M800480.cpp</name>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/image_M800480.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_niddle.cpp</name>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_tiny_rounded_action.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/image_niddle.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_tiny_rounded_action.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_niddle11.cpp</name>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_50_tiny_rounded_pressed.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/image_niddle11.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_50_tiny_rounded_pressed.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_niddle22.cpp</name>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_horizontal_thick_filler_medium.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/image_niddle22.cpp</locationURI>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_horizontal_thick_filler_medium.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_horizontal_thick_rounded_active.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_horizontal_thick_rounded_active.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_medium.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_medium.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_large_rounded_text_off_normal.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_large_rounded_text_off_normal.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_large_rounded_text_on_action.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_large_rounded_text_on_action.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_action_done_50_50_E8F6FB.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_done_50_50_E8F6FB.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_icon_theme_images_av_fast_forward_50_50_E8F6FB.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_av_fast_rewind_50_50_E8F6FB.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/__generated/image_icon_theme_images_av_fast_rewind_50_50_E8F6FB.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_BSlogo.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/image_BSlogo.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_BSlogo11.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Appli/TouchGFX/generated/images/src/image_BSlogo11.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/LanguageGb.cpp</name>

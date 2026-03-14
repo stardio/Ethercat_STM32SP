@@ -833,6 +833,14 @@ void SOEM_SetRunEnable(uint8_t enable)
   uint8_t requested = (enable != 0U) ? 1U : 0U;
   if (soem_shadow_run_enable != requested)
   {
+    if ((soem_shadow_run_enable == 0U) && (requested != 0U))
+    {
+      /* Latch target to current actual position before enabling operation.
+       * This prevents immediate following-error faults caused by stale target=0. */
+      soem_target_position = (int32_t)soem_shadow_position;
+      soem_log("CIA402: RUN ON -> latch target to actual");
+    }
+
     soem_shadow_run_enable = requested;
     soem_log((requested != 0U) ? "CIA402: RUN request ON" : "CIA402: RUN request OFF");
   }

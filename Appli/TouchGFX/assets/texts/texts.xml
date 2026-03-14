@@ -6,6 +6,261 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_TABD" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">%</Translation>
+      </Text>
+      <Text Id="__SingleUse_W153" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Position</Translation>
+      </Text>
+      <Text Id="__SingleUse_TYX5" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">msec</Translation>
+      </Text>
+      <Text Id="__SingleUse_LSH8" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_HHHT" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Dely</Translation>
+      </Text>
+      <Text Id="__SingleUse_RO9P" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">%</Translation>
+      </Text>
+      <Text Id="__SingleUse_SV28" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_MK5M" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_1LOH" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_5RSR" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_6Q4M" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_HDI0" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Target P3</Translation>
+      </Text>
+      <Text Id="__SingleUse_YBAG" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">BS-Automation</Translation>
+      </Text>
+      <Text Id="__SingleUse_CRHA" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">BS-Automation</Translation>
+      </Text>
+      <Text Id="__SingleUse_HD6K" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">BS-Automation</Translation>
+      </Text>
+      <Text Id="__SingleUse_SPH2" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">BS-Automation</Translation>
+      </Text>
+      <Text Id="__SingleUse_7WWC" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Servo Press</Translation>
+      </Text>
+      <Text Id="__SingleUse_LQPP" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">BS-Automation</Translation>
+      </Text>
+      <Text Id="__SingleUse_PMHE" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZBZ1" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_6OJ9" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_IKU6" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">%</Translation>
+      </Text>
+      <Text Id="__SingleUse_4FXX" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_EPQH" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">%</Translation>
+      </Text>
+      <Text Id="__SingleUse_4HGZ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">%</Translation>
+      </Text>
+      <Text Id="__SingleUse_VCMR" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_EMGG" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_OD3R" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_MWX5" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_M5MK" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">%</Translation>
+      </Text>
+      <Text Id="__SingleUse_XV8Q" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_B7MG" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">puls</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZR94" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_C3EK" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_V6FD" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_5E7F" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_5LMG" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_7BB7" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_ZREJ" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_NJE0" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_HETO" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_6TSG" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_6WVR" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_5NJR" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_US21" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_Y3FK" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="Position" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_B55G" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_JD5S" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Position</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZPFF" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">JogREV</Translation>
+      </Text>
+      <Text Id="__SingleUse_5OVW" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_47PJ" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Torque</Translation>
+      </Text>
+      <Text Id="__SingleUse_KY36" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Main</Translation>
+      </Text>
+      <Text Id="__SingleUse_SUA2" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Main</Translation>
+      </Text>
+      <Text Id="__SingleUse_62RR" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Manual Mode</Translation>
+      </Text>
+      <Text Id="__SingleUse_BOS2" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Parameter Mode</Translation>
+      </Text>
+      <Text Id="__SingleUse_8YCJ" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">JogFWD</Translation>
+      </Text>
+      <Text Id="__SingleUse_2LQ1" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Main</Translation>
+      </Text>
+      <Text Id="__SingleUse_VPGH" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">CP ORG Rset</Translation>
+      </Text>
+      <Text Id="__SingleUse_S858" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Current POS</Translation>
+      </Text>
+      <Text Id="__SingleUse_YG09" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Home Mode</Translation>
+      </Text>
+      <Text Id="__SingleUse_253T" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Current POS</Translation>
+      </Text>
+      <Text Id="__SingleUse_LKM2" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Current Torque</Translation>
+      </Text>
+      <Text Id="__SingleUse_GJ7L" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Torque</Translation>
+      </Text>
+      <Text Id="__SingleUse_LWEY" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Speed</Translation>
+      </Text>
+      <Text Id="__SingleUse_HY6K" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Position</Translation>
+      </Text>
+      <Text Id="__SingleUse_KO5U" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">-</Translation>
+      </Text>
+      <Text Id="__SingleUse_VQ1Y" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">E</Translation>
+      </Text>
+      <Text Id="__SingleUse_BBZP" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_EITS" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_I6RO" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_XJM8" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_4FLY" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">6</Translation>
+      </Text>
+      <Text Id="__SingleUse_BFIC" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">5</Translation>
+      </Text>
+      <Text Id="__SingleUse_ADYD" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">7</Translation>
+      </Text>
+      <Text Id="__SingleUse_FJA3" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">9</Translation>
+      </Text>
+      <Text Id="__SingleUse_57LS" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">8</Translation>
+      </Text>
+      <Text Id="__SingleUse_YUXF" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_T1Q3" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Home</Translation>
+      </Text>
+      <Text Id="__SingleUse_29R2" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">STOP</Translation>
+      </Text>
+      <Text Id="__SingleUse_H6TM" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Target P2</Translation>
+      </Text>
+      <Text Id="__SingleUse_FGME" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">START</Translation>
+      </Text>
+      <Text Id="__SingleUse_5KAH" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Slow P1</Translation>
+      </Text>
+      <Text Id="__SingleUse_BM6A" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">Program Mode</Translation>
+      </Text>
+      <Text Id="__SingleUse_MJ3V" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Main</Translation>
+      </Text>
       <Text Id="__SingleUse_HFU1" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">JOG peed</Translation>
       </Text>
@@ -14,15 +269,6 @@
       </Text>
       <Text Id="__SingleUse_I5SG" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">RUN</Translation>
-      </Text>
-      <Text Id="__SingleUse_8LEK" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt; </Translation>
-      </Text>
-      <Text Id="__SingleUse_MTUB" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt; </Translation>
-      </Text>
-      <Text Id="__SingleUse_2NI1" Alignment="Right" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt; </Translation>
       </Text>
       <Text Id="__SingleUse_9FLE" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Torque</Translation>
@@ -45,10 +291,19 @@
       <Text Id="__SingleUse_39QC" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Prog Mode</Translation>
       </Text>
+      <Text Id="NUMERIC_WILDCARD_LEFT" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="NUMERIC_WILDCARD_CENTER" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="NUMERIC_WILDCARD_RIGHT" Alignment="Right" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789." />
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WidgetWildcardCharacters="0123456789.,-" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>

@@ -34,4 +34,21 @@ if ($LASTEXITCODE -ne 0) {
     throw "Flash failed."
 }
 
+# Record the exact main image that was flashed so UI-only updates can verify compatibility.
+$stateDir = Join-Path $repoRoot ".flash_state"
+if (-not (Test-Path $stateDir)) {
+    New-Item -ItemType Directory -Path $stateDir | Out-Null
+}
+
+$statePath = Join-Path $stateDir "appli_last_flash.json"
+$binHash = (Get-FileHash $BinPath -Algorithm SHA256).Hash
+$state = [ordered]@{
+    FlashedAtUtc = (Get-Date).ToUniversalTime().ToString("o")
+    BinPath = (Resolve-Path $BinPath).Path
+    BinHash = $binHash
+    Address = $Address
+}
+$state | ConvertTo-Json | Set-Content -Path $statePath -Encoding UTF8
+Write-Host "[flash] state: $statePath"
+
 Write-Host "[flash] done"

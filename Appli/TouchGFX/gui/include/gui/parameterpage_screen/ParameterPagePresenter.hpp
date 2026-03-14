@@ -1,17 +1,17 @@
-#ifndef SCREEN3PRESENTER_HPP
-#define SCREEN3PRESENTER_HPP
+#ifndef PARAMETERPAGEPRESENTER_HPP
+#define PARAMETERPAGEPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Screen3View;
+class ParameterPageView;
 
-class Screen3Presenter : public touchgfx::Presenter, public ModelListener
+class ParameterPagePresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Screen3Presenter(Screen3View& v);
+    ParameterPagePresenter(ParameterPageView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Screen3Presenter() {}
+    virtual ~ParameterPagePresenter() {}
 
 private:
-    Screen3Presenter();
+    ParameterPagePresenter();
 
-    Screen3View& view;
+    ParameterPageView& view;
 };
 
-#endif // SCREEN3PRESENTER_HPP
+#endif // PARAMETERPAGEPRESENTER_HPP
